@@ -1,0 +1,439 @@
+/* */
+/*Обнуление*/
+/* Очищаем все отступы и границы во ВСЕХ тегах на странице*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* Меняет подсчет ширины блока для удобства верстания*/
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Убираем линии обводки у некооторых браузеров*/
+:focus,
+:active {
+	outline: none;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+/* Делает теги блочными*/
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+/* Уравнивает поведение шрифтов в разных браузерах*/
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	/* просто 1(без 'px') */
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Задаем наследование шрифта (по умолчанию эти теги не наследуют шрифт)*/
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+/* */
+/* Убирают некоторые особености в некоторых  браузерах*/
+input::-ms-clear {
+	display: none;
+}
+
+/* */
+button {
+	cursor: pointer;
+}
+
+/* */
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+/* */
+a,
+a:visited {
+	text-decoration: none;
+}
+
+/* */
+a:hover {
+	text-decoration: none;
+}
+
+/* */
+ul li {
+	list-style: none;
+}
+
+/* чистит стили в маркированых списках*/
+img {
+	vertical-align: top;
+}
+
+/* */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+/*Обнуляет заголовки */
+/*--------------------*/
+/* Далее задаем стили согласно ТЕХ. ЗАДАНИЮ */
+:root {
+	--main-color-light: #A4ADBE;
+	--main-color-dark: #34364B;
+	--main-color-hover: #FF7A52;
+	--heder-height-pc: 50px;
+	/* для ПК >768px*/
+	--heder-height-mobile: 40px;
+	/* для мобилок <768px*/
+}
+
+html,
+body {
+	height: 100%;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: var(--main-color-light);
+}
+
+.del {
+	display: none;
+}
+
+.wrapper {}
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+
+.header:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--main-color-dark);
+	z-index: 3;
+}
+
+/*.content{
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	color: var(--main-color-light;
+}*/
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0px 10px;
+}
+
+.header__body {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: var(--heder-height-pc);
+	align-items: center;
+}
+
+.header__logo {
+	flex: 0 0 60px;
+	border-radius: 10%;
+	overflow: hidden;
+	z-index: 3;
+}
+
+.header__logo__img {
+	max-width: 90%;
+	display: block;
+}
+
+.header__burger {
+	display: none;
+}
+
+.header__menu {
+	z-index: 3
+}
+
+.header__list {
+	display: flex;
+	position: relative;
+	z-index: 2;
+}
+
+.header__list li {
+	text-transform: uppercase;
+	margin: 0px 0px 0px 20px;
+}
+
+.header__list li:hover {}
+
+.header__link {
+	color: var(--main-color-light);
+	font-size: 18px;
+	height: 80px;
+}
+
+.header__menu>.header__list>li>a {
+	padding: 31px 0px;
+}
+
+.header__link:hover {
+	color: var(--main-color-hover);
+}
+
+/*\/МЕДИА ЗАПРОС адаптация для мобильных устройств*/
+@media (max-width: 767px) {
+	.header__menu>.header__list>li>a {
+		padding: 20px 0px;
+	}
+
+	body.lock {
+		overflow: hidden;
+	}
+
+	.content {
+		padding: 60px 0px 0px 0px;
+	}
+
+	.content__text {
+		font-size: 25px;
+		text-decoration: none;
+	}
+
+	.header__body {
+		height: var(--heder-height-mobile);
+	}
+
+	.header__burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+	}
+
+	.header__logo {
+		flex: 0 0 40px;
+		border-radius: 50%;
+		overflow: hidden;
+		z-index: 3;
+	}
+
+	.header__burger span {
+		position: absolute;
+		background-color: #fff;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		transition: all 0.4s ease 0s;
+	}
+
+	.header__burger:after,
+	.header__burger:before {
+		content: '';
+		background-color: #FFF;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transition: all 0.4s ease 0s;
+	}
+
+	.header__burger:after {
+		bottom: 0;
+	}
+
+	.header__burger:before {
+		top: 0;
+	}
+
+	.header__burger.active:before {
+		transform: rotate(45deg);
+		top: 9px;
+	}
+
+	.header__burger.active:after {
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+
+	.header__burger.active span {
+		transform: scale(0);
+	}
+
+	.header__menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30%;
+		overflow: auto;
+		background-color: var(--main-color-dark);
+		/*цвет выпадающего меню #2838B0*/
+		z-index: 2;
+		padding: 60px 0px 0px 0px;
+		top: -100%;
+		transition: all 0.4s ease 0s;
+		text-align: center;
+	}
+
+	.header__menu.active {
+		top: 0;
+		transition: all 0.4s ease 0s;
+	}
+
+	.header__list {
+		display: block;
+	}
+
+	.header__list li {
+		padding: 15px 0px 0px 0px;
+	}
+}
+
+/*/\ МЕДИА ЗАПРОС адаптация для ПК*/
+/*/\ МЕДИА ЗАПРОС адаптация для ПК*/
+@media (min-width: 767px) {
+	.content {
+		padding: 100px 0px 0px 0px;
+	}
+
+	.content__text {
+		font-size: 25px;
+		text-decoration: none;
+	}
+
+	/*\/ Стилизация выпадающего списка подменю*/
+	.header__list>li {
+		padding: 31px 0px;
+	}
+
+	.header__list>li:hover .sub-header__menu__list {
+		display: block;
+		padding: 0px 0px 0px 0px;
+	}
+
+	.sub-header__menu__list {
+		display: none;
+		position: absolute;
+		left: 493px;
+		top: 80px;
+		min-width: 200px;
+		padding: 0px 0px 0px 0px;
+	}
+
+	.sub-header__menu__list {
+		padding: ;
+	}
+
+	.sub-header__menu__list>li {
+		background-color: var(--main-bg-color-list);
+		padding: 5px 0px 5px 5px;
+		margin: 0px 0px 0px 0px;
+	}
+
+	.sub-header__menu__list>li:hover .sub-sub-header__menu__list {
+		display: block;
+	}
+
+	.sub-sub-header__menu__list {
+		position: absolute;
+		display: none;
+		min-width: 200px;
+		top: 0;
+		right: 100%;
+	}
+
+
+	.sub-sub-header__menu__list>li {
+		background-color: var(--main-bg-color-list);
+		padding: 5px 0px 5px 10px;
+		margin: 0px 0px 0px 0px;
+	}
+}
+
+/*блоки лендинга============================================================================*/
+.order_a_call {
+	height: 100%;
+	width: 100%;
+	border: #FF7A52 solid 2px;
+}
+
+.about_me {
+	height: 100%;
+	width: 100%;
+	border: #FF7A52 solid 2px;
+
+}
+
+.examples {
+	height: 100%;
+	width: 100%;
+	border: #FF7A52 solid 2px;
+}
+
+.calc {
+	height: 100%;
+	width: 100%;
+	border: #FF7A52 solid 2px;
+}
+
+.footer {}
+
+
+
+
+
+
+
+/*
+//оранжевый 
+#FF7A52
+255 122 82
+//светло-серый
+#A4ADBE
+164 173 190
+//темно-серый
+#34364B
+52 52 75
+
+*/
