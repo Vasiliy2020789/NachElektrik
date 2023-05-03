@@ -130,7 +130,7 @@ body {
 	display: none;
 }
 
-.wrapper {}
+/*.wrapper {}*/
 
 .header {
 	position: fixed;
@@ -202,7 +202,7 @@ body {
 	margin: 0px 0px 0px 20px;
 }
 
-.header__list li:hover {}
+/*.header__list li:hover {}*/
 
 .header__link {
 	color: var(--main-color-light);
@@ -217,6 +217,8 @@ body {
 .header__link:hover {
 	color: var(--main-color-hover);
 }
+
+
 
 /*\/МЕДИА ЗАПРОС адаптация для мобильных устройств*/
 @media (max-width: 767px) {
@@ -362,7 +364,7 @@ body {
 	}
 
 	.sub-header__menu__list {
-		padding: ;
+		padding: 0;
 	}
 
 	.sub-header__menu__list>li {
@@ -392,10 +394,24 @@ body {
 }
 
 /*блоки лендинга============================================================================*/
+
+.content__block {
+	text-align: center;
+	padding: 20px;
+	font-size: 18px;
+}
+
 .order_a_call {
+	text-align: center;
+	font-size: 18px;
+	margin: 0 auto;
 	height: 100%;
 	width: 100%;
 	border: #FF7A52 solid 2px;
+}
+
+.order_a_call__list>li {
+	padding: 20px;
 }
 
 .about_me {
@@ -417,7 +433,7 @@ body {
 	border: #FF7A52 solid 2px;
 }
 
-.footer {}
+/*.footer {}*/
 
 
 
